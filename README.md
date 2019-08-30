@@ -209,3 +209,16 @@ https://docs.docker.com/docker-for-windows/install/
 # MAC
 
 https://docs.docker.com/docker-for-mac/install/
+
+
+# Flujo de la Guia ICI
+
+## 1) DOCKER IMAGES
+
+## 2) DOCKER CONTAINERS
+
+## 3) DOCKER VOLUMES
+
+## 4) DOCKER NETWORK
+
+## 5) DOCKER-COMPOSE
