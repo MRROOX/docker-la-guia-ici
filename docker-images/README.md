@@ -187,6 +187,7 @@ cd a_fondo
 
 El archivo Dockerfile puede tener cualquier nombre, pero por convencion se utiliza `nombre.Dockerfile` en este caso `guia_ici.Dockerfile`
 
+### Directiva `COPY`
 Si revizamos el Dockerfile veremos que existe el comando `COPY` lo que hace es copiar el directorio que se encuentra en el `HOST` a un directorio dentro del `CONTENEDOR` cuando sea ejecutado.
 
 Ahora debemos construir nuestra imagen de nuevo para que se apliquen los cambios.
@@ -204,6 +205,9 @@ Para ejecutar la imagen:
 ```
 docker run -d -p 80:80 apache
 ```
+
+### Directiva `ADD`
+-> todo
 
 
 
