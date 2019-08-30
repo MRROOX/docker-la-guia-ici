@@ -2,6 +2,34 @@
 
 # Comando Basicos
 
+#### Podemos ver todos las directivas utilizadas por docker.
+```
+docker
+```
+#### Docker Version
+```
+docker -v
+```
+#### Lista los Contenedores en ejecucion
+```
+docker ps
+```
+#### Lista las imagenes disponibles en el HOST
+```
+docker images
+```
+#### Lista los Volumenes en el HOST
+```
+docker volume ls
+```
+#### Lista las redes en el HOST
+```
+docker networks ls
+```
+#### Descargamos una imagen oficial disponible en DOCKER HUB.
+```
+docker pull <image_oficial:tag>
+```
 
 
 # Imagenes Oficiales y Contenedores
@@ -159,7 +187,10 @@ cd a_fondo
 
 El archivo Dockerfile puede tener cualquier nombre, pero por convencion se utiliza `nombre.Dockerfile` en este caso `guia_ici.Dockerfile`
 
+Si revizamos el Dockerfile veremos que existe el comando `COPY` lo que hace es copiar el directorio que se encuentra en el `HOST` a un directorio dentro del `CONTENEDOR` cuando sea ejecutado.
+
 Ahora debemos construir nuestra imagen de nuevo para que se apliquen los cambios.
+
 ```
 docker build --tag apache . -f guia_ici.Dockerfile
 ```
@@ -168,7 +199,7 @@ docker build --tag apache . -f guia_ici.Dockerfile
 docker build --tag <nombre_tag> . -f <nombre.Dockerfile>
 ```
 
-Para ejecutar la imagen
+Para ejecutar la imagen:
 
 ```
 docker run -d -p 80:80 apache
