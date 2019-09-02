@@ -24,7 +24,7 @@ docker volume ls
 ```
 #### Lista las redes en el HOST
 ```
-docker networks ls
+docker network ls
 ```
 #### Descargamos una imagen oficial disponible en DOCKER HUB.
 ```
