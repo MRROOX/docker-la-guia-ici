@@ -1,37 +1,5 @@
 # DOCKER IMAGES.
 
-# Comando Basicos
-
-#### Podemos ver todos las directivas utilizadas por docker.
-```
-docker
-```
-#### Docker Version
-```
-docker -v
-```
-#### Lista los Contenedores en ejecucion
-```
-docker ps
-```
-#### Lista las imagenes disponibles en el HOST
-```
-docker images
-```
-#### Lista los Volumenes en el HOST
-```
-docker volume ls
-```
-#### Lista las redes en el HOST
-```
-docker network ls
-```
-#### Descargamos una imagen oficial disponible en DOCKER HUB.
-```
-docker pull <image_oficial:tag>
-```
-
-
 # Imagenes Oficiales y Contenedores
 
 Estas imágenes de docker son desarrolladas por las empresas oficiales, y se encuentra toda la configuracion para poder trabajar con ellas. Estas imagens se almacenan en Docker HUB (https://hub.docker.com/).
@@ -187,9 +155,27 @@ cd a_fondo
 
 El archivo Dockerfile puede tener cualquier nombre, pero por convencion se utiliza `nombre.Dockerfile` en este caso `guia_ici.Dockerfile`
 
-### Directiva `COPY`
-Si revizamos el Dockerfile veremos que existe el comando `COPY` lo que hace es copiar el directorio que se encuentra en el `HOST` a un directorio dentro del `CONTENEDOR` cuando sea ejecutado.
+```
+FROM centos
 
+RUN yum install httpd -y
+
+COPY startbootstrap-sb /var/www/html
+
+CMD apachectl -DFOREGROUND
+```
+
+### Directiva `COPY`
+Si revizamos el archivo `guia_ici.Dockerfile` veremos que existe el comando `COPY` lo que hace es copiar el directorio que se encuentra en el `HOST` a un directorio dentro del `CONTENEDOR` cuando sea ejecutado.
+```
+FROM centos
+
+RUN yum install httpd -y
+
+COPY startbootstrap-sb /var/www/html
+
+CMD apachectl -DFOREGROUND
+```
 Ahora debemos construir nuestra imagen de nuevo para que se apliquen los cambios.
 
 ```
@@ -206,8 +192,10 @@ Para ejecutar la imagen:
 docker run -d -p 80:80 apache
 ```
 
-### Directiva `ADD`
--> todo
+### Directiva `COPY` y `ADD`
+
+Estas dos directivas funcionan tecnicamente igual, pero la gran diferencia es `ADD` puede ser utilizada para acceder a `URL`.
+
 
 
 

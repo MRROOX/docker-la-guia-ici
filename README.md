@@ -1,5 +1,44 @@
 # DOCKER la Guia ICI
 
+# Comando Basicos
+
+#### Podemos ver todos las directivas utilizadas por docker.
+```
+docker
+```
+#### Docker Version
+```
+docker -v
+```
+#### Lista los Contenedores en ejecucion
+```
+docker ps
+```
+#### Lista las imagenes disponibles en el HOST
+```
+docker images
+```
+#### Lista los Volumenes en el HOST
+```
+docker volume ls
+```
+#### Lista las redes en el HOST
+```
+docker network ls
+```
+#### Descargamos una imagen oficial disponible en DOCKER HUB.
+```
+docker pull <image_oficial:tag>
+```
+#### Ver toda la informacion de un Contenedor
+```
+docker inspect <nombre o id del contenedor>
+```
+#### Ver logs del Contendor
+
+```
+docker logs -f mi_mysql
+```
 
 # Instalar Docker
 ```
